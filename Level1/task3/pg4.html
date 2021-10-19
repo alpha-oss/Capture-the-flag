@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF-Task3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(24, 21, 21);
+        }
+
+        @font-face {
+            font-family: sevenSegment;
+            src: url('../assets/Seven\ Segment.ttf');
+        }
+
+        .timer-sec{
+            
+            display: inline-block;
+            position: absolute;
+            top:25%;
+            left:85%;
+        }
+
+        .timer-sec p{
+            color: yellow;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+        }
+
+        h1{
+            font-family: sevenSegment;
+            font-size: 5rem;
+            color: white;
+        }
+        .main-title {
+            text-align: center;
+            font-size: 2em;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: black;
+            background-color: yellowgreen;
+            display: block;
+            text-decoration: none;
+        }
+
+        h2 {
+            color: yellowgreen;
+            margin-bottom: 46px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        p {
+            margin-top: 3px;
+            color: lightskyblue;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.2rem;
+        }
+
+
+        .game-sec {
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .play-arena {
+            margin-top: 60px;
+        }
+
+        .row {
+            text-align: center;
+        }
+
+        .card {
+            display: inline-block;
+            border-radius: 10px;
+            height: 100px;
+            width: 100px;
+            background-color: lightgray;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            border: 2px solid yellowgreen;
+            box-sizing: border-box;
+            box-shadow: inset 0px 0px 0px 1px lightgray;
+
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .orange {
+            background-color: orangered;
+        }
+
+        .salmon {
+            background-color: salmon;
+        }
+
+        .teal {
+            background-color: teal;
+        }
+
+        .purple {
+            background-color: indigo;
+        }
+
+        .spring {
+            background-color: springgreen;
+        }
+
+        .color-hidden {
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <a class="main-title" href="../lvl1-home.html">Welcome to CTF </a>
+
+    <div class="timer-sec">
+        <p>Timer:</p>
+        <h1 id="count">00:30</h1>
+    </div>
+
+    <div class="game-sec">
+
+        <h2>Memory-Puzzle</h2>
+
+        <p> 
+            Here solve the given puzzle ,its based on color memory <br>
+            and you need to complete it in 30 seconds ,if not then <br> puzzle
+            will be automatically shuffled.
+        </p>
+
+        <div class="play-arena">
+            <div class="row">
+                <div class="card color-hidden" onclick="showColor(event)"></div>
+                <div class="card color-hidden" onclick="showColor(event)"></div>
+                <div class="card color-hidden" onclick="showColor(event)"></div>
+                <div class="card color-hidden" onclick="showColor(event)"></div>
+            </div>
+            <div class="row">
+                <div class="card color-hidden" onclick="showColor(event)"></div>
+                <div class="card color-hidden" onclick="showColor(event)"></div>
+                <div class="card color-hidden" onclick="showColor(event)"></div>
+                <div class="card color-hidden" onclick="showColor(event)"></div>
+            </div>
+            <div class="row">
+                <div class="card color-hidden" onclick="showColor(event)"></div>
+                <div class="card color-hidden" onclick="showColor(event)"></div>
+                <div class="card color-hidden" onclick="showColor(event)"></div>
+                <div class="card color-hidden" onclick="showColor(event)"></div>
+            </div>
+            <div class="row">
+                <div class="card color-hidden" onclick="showColor(event)"></div>
+                <div class="card color-hidden" onclick="showColor(event)"></div>
+                <div class="card color-hidden" onclick="showColor(event)"></div>
+                <div class="card color-hidden" onclick="showColor(event)"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //Timer 
+        let mcount = 00;
+        let scount = 30;
+        setInterval(function(){
+            scount--;
+            if(scount>=0){
+                const id = document.getElementById('count');
+                id.innerHTML = `${mcount}:${scount}`;
+            }
+            if(scount==0){
+                location.reload();
+            }
+        },1000);
+
+        let clickCard = null;
+        let preventClick = false;
+        let colorMatch = 0;
+
+        const colors = [
+            'red',
+            'yellow',
+            'salmon',
+            'spring',
+            'orange',
+            'green',
+            'purple',
+            'teal'
+        ];
+
+        //this is done to remove the hard coded color in class section in html
+        const cards = [...document.querySelectorAll('.card')];
+        for (let color of colors) {
+            const cardAIndex = parseInt(Math.random() * cards.length);
+            const cardA = cards[cardAIndex];
+            cards.splice(cardAIndex, 1);
+            cardA.className += `${color}`;
+            cardA.setAttribute('data-color', color);
+
+            const cardBIndex = parseInt(Math.random() * cards.length);
+            const cardB = cards[cardBIndex];
+            cards.splice(cardBIndex, 1);
+            cardB.className += `${color}`;
+            cardB.setAttribute('data-color', color);
+        }
+
+
+        function showColor(e) {
+            const target = e.currentTarget;
+
+            if (preventClick || target === clickCard || target.className.includes('done')) {
+                return;
+            }
+
+            target.className = target.className.replace('color-hidden', '').trim();
+
+            console.log(target.getAttribute('data-color'));
+
+            target.className += ' done';
+
+            if (!clickCard) {
+                clickCard = target;
+            }
+            else if (clickCard) {
+                //when the particular card is not selected 
+                if (clickCard.getAttribute('data-color') !== target.getAttribute('data-color')) {
+                    preventClick = true;
+                    console.log("color are not equal");
+                    setTimeout(() => {
+                        clickCard.className = clickCard.className.replace('done', '').trim() + ' color-hidden';
+                        target.className = target.className.replace('done', '').trim() + ' color-hidden';
+                        clickCard = null;
+                        preventClick = false;
+                    }, 500);
+                } else {
+                    clickCard = null;
+                    colorMatch++;
+                    if (colorMatch === 8) {
+                        alert("Kudos! Here's you flag : CNWi2J49GmAjlP1ywnyiGFRpryHARSxT7Rias0l_MaA");
+                    }
+                }
+
+            }
+        }
+    </script>
+</body>
+
+</html>

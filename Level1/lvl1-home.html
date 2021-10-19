@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture the flag</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        body {
+            background-color: rgb(24, 21, 21);
+        }
+
+        .main-title {
+            word-spacing: 3px;
+            text-align: center;
+            color: black;
+            background-color: yellowgreen;
+            font-size: 2em;
+            display: block;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        #intro{
+            font-size: 20px;
+            line-height: 37px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 200;
+        }
+
+        .main-container {
+            max-width: 80%;
+            margin: auto;
+            padding-top: 25px;
+        }
+
+        .primary-cont {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            margin-top: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            color: greenyellow;
+        }
+
+        h3 {
+            margin: 20px;
+            color: greenyellow;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        button {
+            font-size: 1em;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
+
+        .prm-btn {
+            margin: 1em;
+            padding: 10px;
+            width: 150px;
+            height: 50px;
+            color: white;
+            background-color: black;
+            border: 2px solid yellowgreen
+        }
+
+        .prm-btn:hover {
+            color: black;
+            background-color: yellowgreen;
+        }
+
+        form {
+            margin-bottom: 25px;
+            padding: 10px;
+            color: yellowgreen;
+
+        }
+
+        p {
+            color: white;
+            margin-top: 42px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <a class="main-title" href="./lvl1-home.html">Welcome to CTF </a>
+    <div class="main-container">
+        <p></p>
+
+        <div class="primary-cont">
+            <h2>Level-1</h2>
+            <p id="intro">
+                So here in this level for getting the flag you need to solve 3 challenges , it can be anything
+                quiz,riddle,puzzels etc. Each task has been given instructions which will help u to get your flag easily .
+                After doing all the three task you will find the flag so put it in the given below field.
+            </p>
+            <br>
+
+            <h3>Enter the flag</h3>
+
+            <form action="">
+                Flag :
+                <input type="text" name="flag" id="flag1" required="">
+                <br>
+                <br>
+                <button class="prm-btn" onclick="showFlag()">Submit</button>
+                <p>Link for your first hunt!! : <a href="./task1/task1.html" target="_blank">Click here</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showFlag(){
+            const flag = document.getElementById("flag1").value;
+            if(flag == 'CNWi2J49GmAjlP1ywnyiGFRpryHARSxT7Rias0l_MaA'){
+                alert("Level1 passed go ahead: <next lvl link>");
+            }
+            else{
+                alert("Invalid flag");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
+
+

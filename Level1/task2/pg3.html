@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap" rel="stylesheet">
+    <title>Capture-the-flag</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(24, 21, 21);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2em;
+            color: black;
+            background-color: yellowgreen;
+            display: block;
+            text-decoration: none;
+        }
+
+        h2 {
+            color: yellowgreen;
+            margin-top: 20px;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .main-cont {
+            text-align: center;
+        }
+
+        .img-sec {
+            display: flex;
+            margin-top: 40px;
+            justify-content: space-evenly;
+        }
+
+        .img-sec img {
+            height: 400px;
+            width: 300px;
+        }
+
+        input[type="checkbox"] {
+            margin: 15px 8px;
+        }
+
+        p {
+            color: white;
+            font-family:'Courier New', Courier, monospace;
+            font-size: 1rem;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        form {
+            justify-content: space-evenly;
+            font-size: 20px;
+            color: rgb(27, 192, 27);
+            margin-top: 40px;
+        }
+
+        .submit {
+            margin-top: 30px;
+            width: 200px;
+            height: 50px;
+            color: white;
+            background-color: black;
+            border: 2px solid rgb(27, 192, 27);
+        }
+
+        #ans-btn{
+            color: black;
+            font-size: 1.5rem;
+            font-family: 'Courier New', Courier, monospace;
+            letter-spacing: 2px;
+            display: inherit;
+            margin: 20px auto;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <a class="main-title" href="../lvl1-home.html">Welcome to CTF </a>
+    <p>
+        <!-- Haahaa , link is not here LOL! -->
+    </p>
+
+    <h2>Spot the Difference</h2>
+    <p> Note: In the below options it includes both right and wrong options so observe the image and select it.</p>
+    <div class="main-cont">
+
+        <div class="img-sec">
+            <img src="../assets/images/img1.jpg" alt="">
+            <img src="../assets/images/img2.jpg" alt="">
+        </div>
+
+        <form action="">
+            <input type="checkbox" name="frog-hat" id="" class="checkbox" value="frog-hat">
+            <label for="frog-hat"> frog-hat</label>
+            <input type="checkbox" name="stars" id="" class="checkbox" value="stars">
+            <label for="stars"> Stars</label>
+            <input type="checkbox" name="ghost" id="" class="checkbox" value="ghost-hat">
+            <label for="ghost-hat"> ghost-hat </label>
+            <input type="checkbox" name="zombie" id="" class="checkbox" value="zombie-eyes">
+            <label for="zombie-eyes"> zombie-eyes</label>
+            <input type="checkbox" name="pot" id="" class="checkbox" value="pot">
+            <label for="pot"> pot</label>
+            <input type="checkbox" name="window" id="" class="checkbox" value="windows">
+            <label for="windows"> windows</label>
+            <input type="checkbox" name="spidey" id="" class="checkbox" value="spider">
+            <label for="spider"> spider</label>
+            <br>
+            <input type="checkbox" name="mushroom" id="" class="checkbox" value="mushroom">
+            <label for="mushroom"> mushroom</label>
+            <input type="checkbox" name="teeth" id="" class="checkbox" value="vampire-teeth">
+            <label for="vampire-teeth"> vampire-teeth</label>
+            <input type="checkbox" name="spell" id="" class="checkbox" value="spell-bubble">
+            <label for="spell-bubble"> spell-bubble</label>
+            <input type="checkbox" name="bats" id="" class="checkbox" value="bats">
+            <label for="bats"> bats</label>
+            <input type="checkbox" name="old" id="" class="checkbox" value="old-man-stick">
+            <label for="old-man-stick"> old-man-stick</label>
+            <input type="checkbox" name="bone" id="" class="checkbox" value="bone">
+            <label for="bone"> bone</label>
+            <input type="checkbox" name="clouds" id="" class="checkbox" value="clouds">
+            <label for="clouds"> clouds</label>
+            
+            <input type="checkbox" name="swirly" id="" class="checkbox" value="swirly">
+            <label for="swirly"> swirly</label>
+            <input type="checkbox" name="sky" id="" class="checkbox" value="sky">
+            <label for="sky"> sky</label>
+            <button id="ans-btn" onclick="checkResult()">Check result</button>
+        </form>
+        
+
+    </div>
+
+    <script type="text/javascript">
+        
+        function checkResult() {
+            const valList = ['frog-hat', 'ghost-hat', 'mushroom', 'spell-bubble', 'spider', 'bats', 'old-man-stick', 'bone', 'swirly', 'windows'];
+            let count=0;
+            const val = document.getElementsByClassName('checkbox');
+            const options = []
+            for(let i=0 ; i<16;i++){
+                if(val[i].checked == true){
+                    if(valList.includes(val[i].value)){
+                        count++;
+                    }
+                    else{
+                        count--;
+                    }
+                }
+            }
+
+            if(count==10){
+                alert("You win!! Link: http://127.0.0.1:5500/Level1/task3/pg4.html");
+            }else{
+                alert("Error in options");
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

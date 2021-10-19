@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap" rel="stylesheet"> 
+    <title>Capture-the-flag</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: rgb(24, 21, 21);
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2em;
+            color: black;
+            background-color:  yellowgreen;
+            display: block;
+            text-decoration: none;
+        }
+        
+        h2{
+            color: yellowgreen;
+            margin-top: 20px;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .main-cont{
+            text-align: center;
+        }
+
+        p{
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 1.5em;
+        }
+
+        form{
+            font-size: 40px;
+            color: rgb(27, 192, 27);
+            margin-top: 40px;
+        }
+
+        .submit{
+            margin-top: 30px;
+            width: 200px;
+            height: 50px;
+            color: white;
+            background-color: black;
+            border: 2px solid rgb(27, 192, 27);
+        }
+
+        #hintid{
+            color: yellowgreen;
+            margin-top: 92px;
+            font-size: 1.5rem;
+            font-family:'Courier New', Courier, monospace;
+            letter-spacing: 2px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <a class="main-title" href="../lvl1-home.html">Welcome to CTF </a>
+    <p>
+        <!-- Haahaa , link is not here LOL! -->
+    </p>
+
+    <h2>Riddles</h2>
+
+    <div class="main-cont">
+        <iframe src="https://giphy.com/embed/xTiN0IuPQxRqzxodZm" width="200" height="220" frameBorder="0"
+            class="giphy-embed">
+        </iframe>
+        <p></p>
+
+        <p>
+            "I’m sent before I’m ready, I’ll break before you know it and you can’t find me many places. What am I?"
+        </p>
+        <form action="./pg2.html">
+            Answer:
+            <input type="text" name="answer" id="tsk1-ans" required="" placeholder="Enter your answer">
+            <br>
+            <button class="submit" onclick="showResult()">Submit</button>
+        </form>
+
+        <h3 id="hintid"><strong>Hint: </strong>Its related to product deployment</h3>
+
+        <div id="ans-slot">
+        
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+
+        function showResult() {
+            const val = document.getElementById('tsk1-ans').value ;
+            if(val==='beta-release'||val==='beta'){
+                alert("Well done! you will be redirected to next riddle");
+                
+            }
+            else{
+                alert("Invalid!!");
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
