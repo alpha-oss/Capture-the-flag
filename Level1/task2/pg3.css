@@ -13,6 +13,7 @@ body {
     font-size: 2em;
     color: black;
     background-color: yellowgreen;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: block;
     text-decoration: none;
 }
