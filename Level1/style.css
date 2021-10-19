@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body {
+    background-color: rgb(24, 21, 21);
+}
+
+.main-title {
+    word-spacing: 3px;
+    text-align: center;
+    color: black;
+    background-color: yellowgreen;
+    font-size: 2em;
+    display: block;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#intro{
+    font-size: 20px;
+    line-height: 37px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 200;
+}
+
+.main-container {
+    max-width: 80%;
+    margin: auto;
+    padding-top: 25px;
+}
+
+.primary-cont {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    margin-top: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    color: greenyellow;
+}
+
+h3 {
+    margin: 20px;
+    color: greenyellow;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button {
+    font-size: 1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.prm-btn {
+    margin: 1em;
+    padding: 10px;
+    width: 150px;
+    height: 50px;
+    color: white;
+    background-color: black;
+    border: 2px solid yellowgreen
+}
+
+.prm-btn:hover {
+    color: black;
+    background-color: yellowgreen;
+}
+
+form {
+    margin-bottom: 25px;
+    padding: 10px;
+    color: yellowgreen;
+
+}
+
+p {
+    color: white;
+    margin-top: 42px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

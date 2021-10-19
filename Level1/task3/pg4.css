@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(24, 21, 21);
+}
+
+@font-face {
+    font-family: sevenSegment;
+    src: url('../assets/Seven\ Segment.ttf');
+}
+
+.timer-sec{
+    
+    display: inline-block;
+    position: absolute;
+    top:25%;
+    left:85%;
+}
+
+.timer-sec p{
+    color: yellow;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+h1{
+    font-family: sevenSegment;
+    font-size: 5rem;
+    color: white;
+}
+.main-title {
+    text-align: center;
+    font-size: 2em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    background-color: yellowgreen;
+    display: block;
+    text-decoration: none;
+}
+
+h2 {
+    color: yellowgreen;
+    margin-bottom: 46px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+p {
+    margin-top: 3px;
+    color: lightskyblue;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+}
+
+
+.game-sec {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.play-arena {
+    margin-top: 60px;
+}
+
+.row {
+    text-align: center;
+}
+
+.card {
+    display: inline-block;
+    border-radius: 10px;
+    height: 100px;
+    width: 100px;
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.card:hover {
+    border: 2px solid yellowgreen;
+    box-sizing: border-box;
+    box-shadow: inset 0px 0px 0px 1px lightgray;
+
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.orange {
+    background-color: orangered;
+}
+
+.salmon {
+    background-color: salmon;
+}
+
+.teal {
+    background-color: teal;
+}
+
+.purple {
+    background-color: indigo;
+}
+
+.spring {
+    background-color: springgreen;
+}
+
+.color-hidden {
+    background-color: #eee;
+}
